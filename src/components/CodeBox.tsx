@@ -14,7 +14,6 @@ type CodeBoxProps = {
 
 export default function CodeBox({ pythonCode, javaCode }: CodeBoxProps) {
   const [language, setLanguage] = useState('python');
-  const codeRef = useRef();
 
   const handleCopyClick = () => {
     const codeToCopy = language === 'python' ? pythonCode : javaCode;

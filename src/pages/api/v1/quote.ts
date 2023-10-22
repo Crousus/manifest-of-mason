@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { NextApiRequest, NextApiResponse } from "next";
+import { type NextApiRequest, type NextApiResponse } from "next";
 
 const prisma = new PrismaClient();
 
@@ -15,6 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const accessToken = authHeader[1];
 
     // Check for user existence in the database
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
     const user = await prisma.user.findUnique({
         where: { access_token: accessToken }
     });
@@ -24,20 +25,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
         // Update the user's uses count
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     await prisma.user.update({
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
         where: { id: user.id },
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
         data: { uses: user.uses + 1 }
     });
 
     // Fetch a random quote from the Quote model
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     const totalQuotes = await prisma.quote.count();
     const randomIndex = Math.floor(Math.random() * totalQuotes);
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     const randomQuote = await prisma.quote.findFirst({
         skip: randomIndex
     });
 
-    const quoteText = randomQuote?.quote || "No quotes found";
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
+    const quoteText = randomQuote?.quote ?? "No quotes found";
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     res.status(200).json({message: quoteText});
 }

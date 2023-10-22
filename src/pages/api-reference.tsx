@@ -1,4 +1,3 @@
-'use client'
 import RequestApiKeyBox from "~/components/RequestApiKeyBox";
 import Footer from "~/components/Footer";
 import CodeBox from "~/components/CodeBox";

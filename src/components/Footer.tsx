@@ -1,6 +1,6 @@
 type IconProps = {
   className?: string;
-  [key: string]: any; // Add this line if you want to allow any other property
+  [key: string]: unknown; // Add this line if you want to allow any other property
 };
 
 

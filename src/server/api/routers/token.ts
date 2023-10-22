@@ -26,7 +26,8 @@ export const tokenRouter = createTRPCRouter({
             const accessToken = crypto.randomBytes(48).toString('hex')
 
             try {
-                const user = await prisma.user.upsert({
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+                await prisma.user.upsert({
                     where: {email: input.email},
                     update: {email: input.email, access_token: accessToken},
                     create: {
@@ -35,7 +36,6 @@ export const tokenRouter = createTRPCRouter({
                         uses: 0,
                     },
                 });
-
                 await sendEmail(input.email, 'Your token', `Your token is: ${accessToken}`)
 
                 return {status: 'success', message: 'Check your email for your token'};
@@ -47,6 +47,7 @@ export const tokenRouter = createTRPCRouter({
 });
 
 async function sendEmail(to: string, subject: string, text: string): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -62,5 +63,6 @@ async function sendEmail(to: string, subject: string, text: string): Promise<voi
         text: text
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     await transporter.sendMail(mailOptions);
 }
