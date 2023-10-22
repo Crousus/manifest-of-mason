@@ -52,19 +52,14 @@ export default function Home() {
                     Better than the Chuck Norris executor.
                   </h1>
                   <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                    Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in quis cupidatat mollit aute velit. Et
-                    labore commodo nulla aliqua proident mollit ullamco exercitation tempor. Sint aliqua anim nulla sunt
-                    mollit id pariatur in voluptate cillum.
+                    I had no energy to put more stuff here :)
                   </p>
                   <div className="mt-10 flex items-center gap-x-6">
                     <a
-                      href="@/pages/index.tsx#"
+                      href="./api-reference"
                       className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
                       Get started
-                    </a>
-                    <a href="@/pages/index.tsx#" className="text-sm font-semibold leading-6 text-gray-900">
-                      Live demo <span aria-hidden="true">→</span>
                     </a>
                   </div>
 

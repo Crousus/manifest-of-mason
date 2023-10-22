@@ -47,5 +47,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const quoteText = randomQuote?.quote ?? "No quotes found";
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    res.status(200).json({message: quoteText});
+    res.status(200).json({wisdom: quoteText});
 }

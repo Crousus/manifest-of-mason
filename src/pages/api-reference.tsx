@@ -22,7 +22,7 @@ export default function Page() {
                         <CodeBox pythonCode={"import requests\n" +
                             "\n" +
                             "# API URL\n" +
-                            "url = 'https://api.example.com/data'\n" +
+                            "url = 'https://manifest-of-mason.vercel.app/api/v1/quote'\n" +
                             "# Bearer token\n" +
                             "token = 'YOUR_BEARER_TOKEN'\n" +
                             "# Headers\n" +
@@ -45,7 +45,7 @@ export default function Page() {
                                      "public class ApiRequest {\n" +
                                      "\n" +
                                      "    public static void main(String[] args) {\n" +
-                                     "        String apiUrl = \"https://api.example.com/data\";\n" +
+                                     "        String apiUrl = \"https://manifest-of-mason.vercel.app/api/v1/quote\";\n" +
                                      "        String bearerToken = \"YOUR_BEARER_TOKEN\";\n" +
                                      "\n" +
                                      "        try {\n" +
@@ -97,7 +97,7 @@ export default function Page() {
                                 </p>
                                 <p className="mt-6">
                                     Venture to our cybernetic realm and scribe your particulars, and the sacred HSG
-                                    insignia, upon our token request parchment (online form).
+                                    insignia (@student.unisg.ch mail), upon our token request parchment (online form).
                                 </p>
                                 <RequestApiKeyBox/>
                                 <p className="mt-6">
@@ -122,19 +122,6 @@ export default function Page() {
                                     In eternal camaraderie and with a chisel of wisdom.
                                 </p>
                             </div>
-                        </div>
-                        <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-gray-900/10 pt-10 sm:grid-cols-4">
-                            {stats.map((stat, statIdx) => (
-                                <div key={statIdx}>
-                                    <dt className="text-sm font-semibold leading-6 text-gray-600">{stat.label}</dt>
-                                    <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-900">{stat.value}</dd>
-                                </div>
-                            ))}
-                        </dl>
-                        <div className="mt-10 flex">
-                            <a href="#" className="text-base font-semibold leading-7 text-indigo-600">
-                                Learn more about our company <span aria-hidden="true">&rarr;</span>
-                            </a>
                         </div>
                     </div>
                 </div>
