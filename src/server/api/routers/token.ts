@@ -19,7 +19,7 @@ export const tokenRouter = createTRPCRouter({
                 return {status: 'error', message: 'Only @student.unisg.ch emails are allowed'};
             }
 
-            if (blacklist?.includes(input.email)) {
+            if (blacklist?.includes(input.email.toLowerCase())) {
                 return {status: 'error', message: 'Due to disputes this mail is blacklisted'};
             }
 
