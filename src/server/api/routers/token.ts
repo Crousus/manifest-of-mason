@@ -36,7 +36,7 @@ export const tokenRouter = createTRPCRouter({
                         uses: 0,
                     },
                 });
-                await sendEmail(input.email, 'Your token', `Your token is: ${accessToken}`)
+                await sendEmail(input.email, 'Your token to wisdom', `Your token is: ${accessToken} \n You can get a new one by resubmitting, replacing the old one` )
 
                 return {status: 'success', message: 'Check your email for your token'};
             } catch (error) {
